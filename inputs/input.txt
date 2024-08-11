@@ -1,0 +1,1 @@
+--run_name=test_run --path_to_pdb=$HOME/rfdiffusion-pipeline-graham/inputs/test.pdb --hotspots=A1,A2,A3 --num_structs=2 --sequences_per_struct=2 --output_dir=$HOME/projects/def-brt381/sxie1/ --scaffold_dir=$HOME/projects/def-brt381/sxie1/RFdiffusion/examples/ppi_scaffolds/ --min_helices=3 --sbatch_flags="--gres=gpu:v100:1 --mem=64G --tmp=64G --time=6:00:00"
