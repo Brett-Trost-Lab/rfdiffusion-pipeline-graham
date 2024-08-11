@@ -1,2 +1,3 @@
-# rfdiffusion-pipeline-graham
-Implementation of the RFdiffusion pipeline on the Graham HPC cluster.
+# RFdiffusion Pipeline (Graham cluster)
+
+Please see [https://github.com/sophia-xie/rfdiffusion-pipeline](https://github.com/sophia-xie/rfdiffusion-pipeline) for the main repository.
