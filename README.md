@@ -36,6 +36,12 @@ source venv/bin/activate
 cd env/SE3Transformer
 pip install --no-cache-dir -r requirements.txt
 python setup.py install
+cd ../..
+pip install torch dgl hydra-core omegaconf pyrsistent pandas
+python setup.py install
 
-IN PROGRESS.
+# move some directories
 ```
+
+#### ProteinMPNN and AlphaFold2 (dl_binder_design)
+IN PROGRESS.
