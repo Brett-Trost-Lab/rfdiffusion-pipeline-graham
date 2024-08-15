@@ -10,7 +10,7 @@ INSTALLATION_DIR=/path/to/dir/for/installations/  # ideally in your 'projects/' 
 cd $INSTALLATION_DIR
 ```
 
-#### RFdiffusion
+### RFdiffusion
 ```
 # clone repo
 module load StdEnv/2020 gcc python/3.10
@@ -43,7 +43,8 @@ pip install torch dgl hydra-core omegaconf pyrsistent pandas
 python setup.py install
 
 # move some directories
+
 ```
 
-#### ProteinMPNN and AlphaFold2 (dl_binder_design)
+### ProteinMPNN and AlphaFold2 (dl_binder_design)
 IN PROGRESS.
