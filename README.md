@@ -97,6 +97,9 @@ source ../../venv/bin/activate
 python af2_importtest.py
 ```
 
+Before running any scripts, update the paths for <RFDIFFUSION_DIR> and <DL_BINDER_DESIGN_DIR> with their installation locations.
+This will be required in `scripts/pipeline.sh` and `helper_scripts/make_scaffolds.sh`.
+
 # Usage
 
 See https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline for detailed instructions.
