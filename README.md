@@ -4,6 +4,12 @@ Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://git
 
 To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
 
+To run python scripts:
+```
+module load python/3.10
+source <RFDIFFUSION_DIR>/venv/bin/activate
+```
+
 # Installation (in progress)
 
 These instructions install the programs as virtual environments rather than conda environments. Thanks Nemo Liu for figuring this out!
