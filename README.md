@@ -45,7 +45,8 @@ pip install torch dgl hydra-core omegaconf pyrsistent pandas
 python setup.py install
 
 # move some directories
-
+mv models/ venv/lib/python3.10/site-packages/rfdiffusion-1.1.0-py3.10.egg/
+mv examples/ venv/lib/python3.10/site-packages/rfdiffusion-1.1.0-py3.10.egg/
 ```
 
 ### ProteinMPNN and AlphaFold2 (dl_binder_design)
