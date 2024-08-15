@@ -2,8 +2,8 @@
 
 # Runs the pipeline from RFDiffusion -> ProteinMPNN -> AlphaFold2.
 
-RFDIFFUSION_DIR=/project/6090124/sxie1/RFdiffusion/
-DL_BINDER_DESIGN_DIR=/project/6090124/sxie1/dl_binder_design/
+RFDIFFUSION_DIR=/project/6090124/sxie1/repos/RFdiffusion/
+DL_BINDER_DESIGN_DIR=/project/6090124/sxie1/repos/dl_binder_design/
 
 set -eo pipefail
 
@@ -48,12 +48,14 @@ echo Using hotspots $hotspots
 echo
 echo Getting Contig...
 
-module load python/3.10
+echo Loading module...
+module load StdEnv/2020 gcc python/3.10
+
+echo Activating virtual environment...
+source $RFDIFFUSION_DIR/venv/bin/activate
 
 contig=$(python ${pipeline_dir}/scripts/get_contig.py "$path_to_pdb")
 echo Contig $contig
-
-module unload python/3.10
 
 echo
 echo Data prep time elapsed: $(convert_seconds $SECONDS)
@@ -62,12 +64,6 @@ SECONDS=0
 
 echo
 echo STEP 1: RFDiffusion
-
-echo Loading module...
-module load StdEnv/2020 gcc python/3.10
-
-echo Activating virtual environment...
-source $RFDIFFUSION_DIR/venv/bin/activate
 
 echo Running RFdiffusion...
 
@@ -86,7 +82,9 @@ if [ "$scaffold_dir" = "None" ]; then
     
 else
     echo Generating target scaffolds for fold conditioning...
-    bash ${pipeline_dir}/scripts/make_scaffolds.sh "$path_to_pdb" "${output_dir}/target_scaffold/"
+    $RFDIFFUSION_DIR/helper_scripts/make_secstruc_adj.py \
+        --input_pdb $path_to_pdb \
+        --out_dir "${output_dir}/target_scaffold/"
 
     pdb_name=$(basename -- "$path_to_pdb")
     pdb_name="${pdb_name%.*}"
@@ -127,7 +125,7 @@ echo Loading module...
 module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
 
 echo Activating virtual environment...
-source $DL_BINDER_DESIGN_DIR/mpnn/bin/activate
+source $DL_BINDER_DESIGN_DIR/venv/bin/activate
 
 echo
 echo Filtering by number of helices...
@@ -207,9 +205,14 @@ $DL_BINDER_DESIGN_DIR/af2_initial_guess/predict.py \
 deactivate
 module unload StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
 
+echo Loading module...
+module load StdEnv/2020 gcc python/3.10
+
+echo Activating virtual environment...
+source $RFDIFFUSION_DIR/venv/bin/activate
+
 echo
 echo Filtering output scores...
-module load python/3.10
 python $pipeline_dir/scripts/filter_output.py ${output_dir}/${run_name}.out.sc
 
 echo

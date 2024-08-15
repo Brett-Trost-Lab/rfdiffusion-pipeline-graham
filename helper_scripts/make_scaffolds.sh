@@ -9,7 +9,7 @@ output_dir=$(realpath $2)
 
 set -eo pipefail
 
-RFDIFFUSION_DIR=$HOME/projects/def-brt381/sxie1/RFdiffusion/
+RFDIFFUSION_DIR=$HOME/projects/def-brt381/sxie1/repos/RFdiffusion/
 
 echo Loading modules...
 module load StdEnv/2020 gcc python/3.10
