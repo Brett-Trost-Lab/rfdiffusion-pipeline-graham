@@ -33,6 +33,8 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 cd ..
 virtualenv venv
 source venv/bin/activate
+
+# install packages
 cd env/SE3Transformer
 pip install --no-cache-dir -r requirements.txt
 python setup.py install
