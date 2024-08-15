@@ -1,8 +1,10 @@
 # RFdiffusion Pipeline (Graham cluster)
 
-Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository.
+Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository. Some functionality on the main repository is not yet available here.
 
-# Installation
+To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
+
+# Installation (in progress)
 
 These instructions install the programs as virtual environments rather than conda environments. Thanks Nemo Liu for figuring this out!
 ```
@@ -71,5 +73,3 @@ pip install --no-index pyrosetta-2024.15+release.d972b59c53-cp310-cp310-linux_x8
 # download model weights
 
 ```
-
-IN PROGRESS.
