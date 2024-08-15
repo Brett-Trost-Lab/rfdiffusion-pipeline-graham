@@ -99,6 +99,8 @@ python af2_importtest.py
 
 # Usage
 
+See https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline for detailed instructions.
+
 To run python scripts:
 ```
 module load python/3.10
