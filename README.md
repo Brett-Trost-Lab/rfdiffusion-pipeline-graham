@@ -47,4 +47,27 @@ python setup.py install
 ```
 
 ### ProteinMPNN and AlphaFold2 (dl_binder_design)
+```
+# clone repo
+module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
+git clone https://github.com/nrbennet/dl_binder_design
+
+# make virtual environment
+cd dl_binder_design/
+virtualenv venv
+source venv/bin/activate
+pip install --no-index --upgrade pip
+
+# download pyrosetta
+wget https://graylab.jhu.edu/download/PyRosetta4/archive/release/PyRosetta4.Release.python310.ubuntu.wheel/pyrosetta-2024.15+release.d972b59c53-cp310-cp310-linux_x86_64.whl
+
+# install packages
+pip install --no-index pyrosetta-2024.15+release.d972b59c53-cp310-cp310-linux_x86_64.whl torch biopython==1.81 ml-collections tensorflow==2.9 jax==0.4.8 jaxlib==0.4.7+cuda11.cudnn82.computecanada dm-haiku dm-tree mock
+
+# clone ProteinMPNN
+
+# download model weights
+
+```
+
 IN PROGRESS.
