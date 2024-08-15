@@ -20,6 +20,7 @@ git clone https://github.com/RosettaCommons/RFdiffusion
 
 # download model weights
 cd RFdiffusion/
+pwd  # this will be your <RFDIFFUSION_DIR>
 mkdir models && cd models
 wget http://files.ipd.uw.edu/pub/RFdiffusion/6f5902ac237024bdd0c176cb93063dc4/Base_ckpt.pt
 wget http://files.ipd.uw.edu/pub/RFdiffusion/e29311f6f1bf1af907f9ef9f44b8328b/Complex_base_ckpt.pt
@@ -64,6 +65,7 @@ git clone https://github.com/nrbennet/dl_binder_design
 
 # make virtual environment
 cd dl_binder_design/
+pwd  # this will be your <DL_BINDER_DESIGN_DIR>
 virtualenv venv
 source venv/bin/activate
 pip install --no-index --upgrade pip
@@ -75,7 +77,21 @@ wget https://graylab.jhu.edu/download/PyRosetta4/archive/release/PyRosetta4.Rele
 pip install --no-index pyrosetta-2024.15+release.d972b59c53-cp310-cp310-linux_x86_64.whl torch biopython==1.81 ml-collections tensorflow==2.9 jax==0.4.8 jaxlib==0.4.7+cuda11.cudnn82.computecanada dm-haiku dm-tree mock
 
 # clone ProteinMPNN
+cd mpnn_fr/
+git clone https://github.com/dauparas/ProteinMPNN.git
 
 # download model weights
+cd ../af2_initial_guess/
+mkdir -p model_weights/params && cd model_weights/params
+wget https://storage.googleapis.com/alphafold/alphafold_params_2022-12-06.tar
+tar --extract --verbose --file=alphafold_params_2022-12-06.tar
 
+# test ProteinMPNN installation
+cd ../../../include/importtests/
+python proteinmpnn_importtest.py
+
+# test AF2 installation (needs GPU)
+srun --gres=gpu:1 --pty bash
+source ../../venv/bin/activate
+python af2_importtest.py
 ```
