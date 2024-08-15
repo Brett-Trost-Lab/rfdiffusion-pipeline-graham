@@ -2,14 +2,16 @@
 # Make secondary structure and block adjacency pytorch files from a PDB.
 # Used for RFdiffusion fold conditioning.
 
+############ UPDATE WITH YOUR INSTALLATION LOCATION #############
+RFDIFFUSION_DIR=$HOME/projects/def-brt381/sxie1/repos/RFdiffusion/
+#################################################################
+
 ### REQUIRED POSITIONAL ARGUMENTS
 input=$(realpath $1)  # can be PDB or directory of PDBs to scaffold
 output_dir=$(realpath $2)
 ##############################
 
 set -eo pipefail
-
-RFDIFFUSION_DIR=$HOME/projects/def-brt381/sxie1/repos/RFdiffusion/
 
 echo Loading modules...
 module load StdEnv/2020 gcc python/3.10

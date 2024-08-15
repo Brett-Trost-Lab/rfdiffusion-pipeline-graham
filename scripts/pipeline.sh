@@ -2,8 +2,10 @@
 
 # Runs the pipeline from RFDiffusion -> ProteinMPNN -> AlphaFold2.
 
+############ UPDATE WITH YOUR INSTALLATION LOCATIONS ##############
 RFDIFFUSION_DIR=/project/6090124/sxie1/repos/RFdiffusion/
 DL_BINDER_DESIGN_DIR=/project/6090124/sxie1/repos/dl_binder_design/
+###################################################################
 
 set -eo pipefail
 
