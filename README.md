@@ -47,7 +47,12 @@ python setup.py install
 # move some directories
 mv models/ venv/lib/python3.10/site-packages/rfdiffusion-1.1.0-py3.10.egg/
 mv examples/ venv/lib/python3.10/site-packages/rfdiffusion-1.1.0-py3.10.egg/
+
+# get example scaffolds
+tar -xvf venv/lib/python3.10/site-packages/rfdiffusion-1.1.0-py3.10.egg/examples/ppi_scaffolds_subset.tar.gz -C .
 ```
+
+The example scaffolds are extracted to `$INSTALLATION_DIR/RFdiffusion/ppi_scaffolds/`.
 
 ### ProteinMPNN and AlphaFold2 (dl_binder_design)
 ```
