@@ -91,7 +91,8 @@ cd ../../../include/importtests/
 python proteinmpnn_importtest.py
 
 # test AF2 installation (needs GPU)
-srun --gres=gpu:1 --pty bash
+srun --gres=gpu:1 --mem=4G --pty bash
+module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
 source ../../venv/bin/activate
 python af2_importtest.py
 ```
