@@ -48,6 +48,8 @@ python setup.py install
 
 ### ProteinMPNN and AlphaFold2 (dl_binder_design)
 ```
+cd $INSTALLATION_DIR
+
 # clone repo
 module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
 git clone https://github.com/nrbennet/dl_binder_design
