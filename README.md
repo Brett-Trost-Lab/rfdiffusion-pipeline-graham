@@ -1,5 +1,9 @@
 # RFdiffusion Pipeline (Graham cluster)
 
+Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository. Some functionality on the main repository is not yet available here.
+
+To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
+
 # Installation
 
 These instructions install the programs as virtual environments rather than conda environments. Thanks Nemo Liu for figuring this out!
@@ -94,10 +98,6 @@ python af2_importtest.py
 ```
 
 # Usage
-
-Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository. Some functionality on the main repository is not yet available here.
-
-To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
 
 To run python scripts:
 ```
