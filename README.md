@@ -1,15 +1,5 @@
 # RFdiffusion Pipeline (Graham cluster)
 
-Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository. Some functionality on the main repository is not yet available here.
-
-To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
-
-To run python scripts:
-```
-module load python/3.10
-source <RFDIFFUSION_DIR>/venv/bin/activate
-```
-
 # Installation
 
 These instructions install the programs as virtual environments rather than conda environments. Thanks Nemo Liu for figuring this out!
@@ -101,4 +91,16 @@ srun --gres=gpu:1 --mem=4G --pty bash
 module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
 source ../../venv/bin/activate
 python af2_importtest.py
+```
+
+# Usage
+
+Please see [https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline](https://github.com/Brett-Trost-Lab/rfdiffusion-pipeline) for the main repository. Some functionality on the main repository is not yet available here.
+
+To request GPUs on Graham, please refer to [https://docs.alliancecan.ca/wiki/Graham](https://docs.alliancecan.ca/wiki/Graham).
+
+To run python scripts:
+```
+module load python/3.10
+source <RFDIFFUSION_DIR>/venv/bin/activate
 ```
