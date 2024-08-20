@@ -115,19 +115,11 @@ else
 
 fi
 
+
 echo
 echo RFDiffusion time elapsed: $(convert_seconds $SECONDS)
 total_seconds=$((total_seconds+SECONDS))
 SECONDS=0
-
-deactivate
-module unload StdEnv/2020 gcc python/3.10
-
-echo Loading module...
-module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
-
-echo Activating virtual environment...
-source $DL_BINDER_DESIGN_DIR/venv/bin/activate
 
 echo
 echo Filtering by number of helices...
@@ -173,6 +165,15 @@ if [ "$min_helices" -gt 1 ]; then
 else
     echo No filtering.
 fi
+
+deactivate
+module unload StdEnv/2020 gcc python/3.10
+
+echo Loading module...
+module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.0 tensorrt/8.6.1.6
+
+echo Activating virtual environment...
+source $DL_BINDER_DESIGN_DIR/venv/bin/activate
 
 echo
 echo STEP 2: ProteinMPNN
