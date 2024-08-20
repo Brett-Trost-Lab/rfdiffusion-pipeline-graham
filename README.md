@@ -64,6 +64,7 @@ module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3 python/3.10 cuda/11.7 cudnn/8.7.
 git clone https://github.com/nrbennet/dl_binder_design
 
 # make virtual environment
+deactivate
 cd dl_binder_design/
 pwd  # this will be your <DL_BINDER_DESIGN_DIR>
 virtualenv venv
